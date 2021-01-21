@@ -44,4 +44,32 @@
         "**/docs/": true,
         "po/*~": true
     }
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.down3Lines",
+            "sequence": [
+                "cursorDown",
+                "cursorDown",
+                "cursorDown"
+            ]
+        },
+        {
+            "command": "multiCommand.swapChar",
+            "interval": 30,
+            "sequence": [
+                "cursorLeftSelect",
+                "editor.action.clipboardCutAction",
+                "cursorRight",
+                "editor.action.clipboardPasteAction"
+            ]
+        },
+        {
+            "command": "latex.mathmode",
+            "sequence": [
+                {"command": "type", "args": {"text": "$$"}},
+                "cursorLeft"
+            ]
+            
+        }
+    ]
 }
