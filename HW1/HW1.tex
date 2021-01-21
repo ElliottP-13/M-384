@@ -67,7 +67,16 @@ such that $\int_a ^b f(x) dx = (b - a)f(y)$
 \hrule
 
 
+\begin{proof}
+    Given a function $f$ is continuous on $[a,b]$, we need to find a $y$ such that $\int_a ^b f(x) dx = (b-a) f(y)$. 
+    Consider $M = \sup_{x \in [a,b]}f(x)$ and $m = \inf_{x \in [a,b]}f(x)$. Then clearly $m \leq f(x) \leq M \sp \forall x \in [a,b]$. 
+    So consider $\int_a ^b f(x)dx \leq \int_a ^b Mdx = M \int_a ^b dx = M(b - a)$, and $\int_a ^b f(x)dx \geq \int_a ^b mdx = m \int_a ^b dx = m(b - a)$.
+    Thus we have $m (b - a) \leq \int_a ^b f(x) dx \leq M (b - a)$.
 
+    We know that $\int_a ^b f(x) dx = (b - a) K$ for some $K$. So then, from above we have $m (b - a) \leq K (b-a) \leq M (b - a) \rightarrow m \leq K \leq M$.
+    So we are looking for $f(y) = K$. Since $f$ is a continuous function, by the Inermediate Value Theorem (theorem 4.2.2), there exists some $y \in [a,b]$ such that $f(y) = K$.
+
+\end{proof}
 
 
 
