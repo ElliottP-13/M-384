@@ -9,7 +9,72 @@
 \begin{document}
 \maketitle
 
-\problem{1}
+\problem{1} 6.1.5 Problem 3
+
+Derive the integration of the derivative theorem from the differentiation of 
+the integral theorem. Can you prove the converse implication?
+
+You \textbf{don't} need to prove the converse case. Here, assume the differentiation of the integral
+theorem is true, namely,
+
+$$\frac{d}{dx} \int_a ^x g(t) dt = g(x)$$
+
+for any continuous function $g(x)$ on $[a,b]$ and $a \leq x \leq b$, you need to use this to prove:
+
+$$\int_a ^b f'(x) dx = f(b) - f(a)$$
+
+for any $C^1$ function $f$ on $[a,b]$.
+
+\textbf{Hint:} Consider function
+
+$$G(x) = \int_a ^x f'(t)dt, \sp a \leq x \leq b$$
+and see how $G(x)$ and $f(x)$ are related.
+\hrule
+
+
+
+
+
+
+
+
+
+\problem{2} 6.1.5 Problem 4
+
+Prove the integral mean value theorem: if $f$ is continuous on $[a,b]$ then there exists $y$ in $(a,b)$ 
+such that $\int_a ^b f(x) dx = (b - a)f(y)$
+\hrule
+
+
+
+
+
+
+
+
+\problem{3} 6.1.5 Problem 8
+
+Let $f$ be a $C^1$ function on the line, and let $g(x) = \int_0 ^1 f(xy)y^2 dy$.
+Prove that $g$ is a $C^1$ function and establish a formula for $g'(x)$ in terms of $f$
+
+\textbf{Hint:} Use theorem 6.1.7
+\hrule
+
+
+
+
+
+\problem{4} 6.1.5 Problem 10
+
+For a continuous, positive function $w(x)$ on $[a,b]$, define the weighted average operator $A_w$ to be:
+
+$$A_w(f) = \frac{ \int_a ^b f(x) w(x) dx }{ \int_a ^b w(x) dx}$$
+
+for continuous functions $f$. Prove that $A_w$ is linear and lies between the maximum and mininum values of $f$.
+
+\textbf{Hint:} $A_w$ is linear if
+$$A_w (c_1 f + c_2 g) = c_1 A_w (f) + c_2 A_w (g)$$
+for any constants $c_1, c_2$ and continuous functions $f,g$ on $[a,b]$
 
 
 \end{document}
