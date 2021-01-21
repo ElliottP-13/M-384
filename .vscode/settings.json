@@ -43,7 +43,7 @@
         "**/.Renviron": true,
         "**/docs/": true,
         "po/*~": true
-    }
+    },
     "multiCommand.commands": [
         {
             "command": "multiCommand.down3Lines",

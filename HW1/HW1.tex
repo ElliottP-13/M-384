@@ -32,7 +32,31 @@ and see how $G(x)$ and $f(x)$ are related.
 \hrule
 
 
+\begin{proof}
+    We want to show 
 
+    $$\int_a ^b f'(x) dx = f(b) - f(a)$$
+
+    From theorem 6.1.2, we know that:
+
+    $$F(x) = \int_a ^x f(t)dt, \quad F'(x) = f(x)$$.
+
+    We consider the function: $G(x) = \int_a ^x f'(t)dt$. 
+    Then from theorem 6.1.2, we know that $G'(x) = f'(x)$, so $G(x) = f(x) + c$ where $c \in \reals$
+
+    We evaluate $G(b) - G(a)$ using this information.
+
+    $$G(b) - G(a) = (f(b) + c) - (f(a) + c) = f(b) - f(a)$$
+
+    We also know from the definition of $G(x)$ that:
+
+    $$G(b) - G(a) = \int_a ^b f'(t)dt - \int_a ^a f'(t)dt = \int_a ^b f'(t)dt $$
+    
+    since $\int_i ^j h(x)dx \leq (j - a) \sup_{x \in [i,j]}(h(x))$, so $\int_a ^a f'(t)dt = 0$.
+
+    Then we know that $\int_a ^b f'(t)dt = G(b) - G(a) = f(b) - f(a)$
+
+\end{proof}
 
 
 
