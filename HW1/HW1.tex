@@ -90,7 +90,19 @@ Prove that $g$ is a $C^1$ function and establish a formula for $g'(x)$ in terms 
 \textbf{Hint:} Use theorem 6.1.7
 \hrule
 
+\begin{proof}
+    First we say that $h(x,y) = f(xy)y^2$. Then we can use Theorem 6.1.7. $$g(x) = \int_{a(x)} ^{b(x)} h(x,y) dy$$
+    and $$g'(x) = h(x, b(x))b'(x) - h(x, a(x))a'(x) + \int_{a(x)} ^{b(x)} \frac{\partial h}{\partial x}(x,y)dy$$
 
+    In this case: $a(x) = 0, \sp a'(x) = 0$ and $b(x) = 1, \sp b'(x) = 0$. 
+    We then evaluate $\frac{\partial h}{\partial x}(x,y) = y f'(xy)y^2 = f'(xy) y^3$
+    We plug this into our expression of $g'$ resulting in 
+
+    $$g'(x) = \int_0 ^1 y^3 \cdot f'(xy) dy$$
+
+    Since $f$ is a $C^1$ function on the line, $f'(xy)$ exists and is continous everywhere. 
+    Thus the derivative of $g$, exists and is continuous everywhere. Therefore $g \in C^1$
+\end{proof}
 
 
 
@@ -105,6 +117,9 @@ for continuous functions $f$. Prove that $A_w$ is linear and lies between the ma
 \textbf{Hint:} $A_w$ is linear if
 $$A_w (c_1 f + c_2 g) = c_1 A_w (f) + c_2 A_w (g)$$
 for any constants $c_1, c_2$ and continuous functions $f,g$ on $[a,b]$
+\hrule
+
+
 
 
 \end{document}
