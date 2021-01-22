@@ -5,6 +5,7 @@
 \author{Elliott Pryor}
 \date{24 Jan 2021}
 
+\rhead{Homework 1}
 
 \begin{document}
 \maketitle
@@ -119,7 +120,36 @@ $$A_w (c_1 f + c_2 g) = c_1 A_w (f) + c_2 A_w (g)$$
 for any constants $c_1, c_2$ and continuous functions $f,g$ on $[a,b]$
 \hrule
 
+We will prove this in two parts: 
+\begin{proof}
+    We start by showing that $A_w$ is linear. 
+    So we need to show that $A_w(c_1 f + c_2 g) = c_1 A_w(f) + c_2 A_w(g)$
 
+    \begin{align*}
+        A_w(c_1 f + c_2 g) &= \frac{ \int_a ^b (c_1 f(x) + c_2 g(x)) w(x) dx }{ \int_a ^b w(x) dx}\\
+        &= \frac{ \int_a ^b c_1 f(x) w(x) + c_2 g(x) w(x) dx }{ \int_a ^b w(x) dx} \\
+        &= \frac{ \int_a ^b c_1 f(x) w(x) dx + \int_a ^b c_2 g(x) w(x) dx }{ \int_a ^b w(x) dx} \\
+        &= \frac{ \int_a ^b c_1 f(x) w(x) dx}{ \int_a ^b w(x) dx} + \frac{\int_a ^b c_2 g(x) w(x) dx }{ \int_a ^b w(x) dx} \\
+        &= c_1 \frac{ \int_a ^b f(x) w(x) dx}{ \int_a ^b w(x) dx} + c_2 \frac{\int_a ^b g(x) w(x) dx }{ \int_a ^b w(x) dx} \\
+        &= c_1 A_w(f(x)) + c_2 A_w(g(x)) \\
+    \end{align*}
+\end{proof}
+
+\begin{proof}
+    We next show that $A_w$ must be between the minimum and maximum values of $f$. 
+    Let $m = \inf_{x \in [a,b]} f(x)$, and $M = \sup_{x \in [a,b]} f(x)$. Then:
+
+    \begin{align*}
+        \frac{ \int_a ^b m w(x) dx }{ \int_a ^b w(x) dx} &\leq \frac{ \int_a ^b f(x) w(x) dx }{ \int_a ^b w(x) dx} \leq \frac{ \int_a ^b M w(x) dx }{ \int_a ^b w(x) dx}\\
+        m &\leq \frac{ \int_a ^b f(x) w(x) dx }{ \int_a ^b w(x) dx} \leq M\\
+        m &\leq A_w(f) \leq M
+    \end{align*}
+    $$$$
+
+
+
+
+\end{proof}
 
 
 \end{document}
