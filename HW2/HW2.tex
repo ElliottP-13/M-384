@@ -45,12 +45,19 @@ every $x$ except for a finite number, then $g$ is Riemann integrable.
 
 \problem{2} 6.2.4 Problem 9, part b
 
-If $f$ is Riemann integrable on $[a, b]$, prove it satisfies a Lipschitz condition
+If $f$ is Riemann integrable on $[a, b]$, prove $F(x) = \int_a ^x f(t) dt$ satisfies a Lipschitz condition
 
 \hrule
 
 
+\begin{proof}
+    We need to show that $|F(x) - F(x_0)| \leq M |x - x_0|$ for some $M$.
 
+    Without loss of generality assume $x > x_0$. Then by the definition of $F$. 
+    We have $$|F(x) - F(x_0)| = \int_a ^x f(t) dt - \int_a ^{x_0} f(t) dt = \int_{x_0} ^x f(t) dt$$ 
+    We say $M = \sup_{x \in [a,b]} f(x)$. 
+    Then $$|F(x) - F(x_0)| = \int_{x_0} ^x f(t) dt \leq M |x - x_0|$$ as required.
+\end{proof}
 
 \problem{3} 6.2.4 Problem 10
 
