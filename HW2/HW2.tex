@@ -19,7 +19,27 @@ every $x$ except for a finite number, then $g$ is Riemann integrable.
 
 \hrule
 
+\begin{proof}
+    
+    Let $a_1, a_2, ..., a_N$ denote the points where $g(a_i) \neq f(a_i)$.
+    Given any $1/n$ surround each $a_k$ by an interval $I_k$ such that $|I_k| < 1/n$. Then,
+    $g$ is continuous and Riemann integrable on $[a,b]$ with $\cup_{k = 1} ^N I_k$ removed.
 
+    Then, we estimate the contribution to the oscillation from the $I_k$ intervals. First, $f$ must be bounded since
+    it is Riemann-integrable. Then since $g$ differs from $f$ at a finite number of locations, it must also be bounded. 
+    Then let $M = \sup _{x \in [a,b]} g(x)$ and $M = \inf _{x \in [a,b]} g(x)$. Then the contribution of any of the intervals:
+    $I_k$ is at most $1/n \cdot (M-m)$. There are $N$ such intervals, so the total contribution to oscillation is $N/n \cdot (M - m)$.
+
+    Then for the remaining intervals: $[a,b] \setminus \cup_{k = 1} ^N I_k$, $g = f$. Since $f$ is Riemann-integrable,
+    the oscillation on these intervals can be made sufficiently small by choosing the partition size sufficiently small. 
+    In other words, the total oscillation on a partition $P'$ of $[a,b] \setminus \cup_{k = 1} ^N I_k$, $g = f$ can be,
+    $\forall 1/n \sp \exists 1/m \sp st \sp Osc(g, P') < 1/n$ for $|P'| < 1/m$ (part b of Theorem 6.2.1)
+
+    Then the total oscillation $Osc(g, P) < 1/n + N/n \cdot (M - m)$. Since $N, M, m$ are constant, there exists a sequence of 
+    partitions such that $Osc(g, P_j) \to 0 \sp as \sp j \to \infty$ by selecting $n$ large enough.
+
+
+\end{proof}
 
 
 
