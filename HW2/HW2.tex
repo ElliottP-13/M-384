@@ -72,6 +72,23 @@ or $f(x_0) - 1/m < f(x) < f(x_0) + 1/m$
 \hrule
 
 
+\begin{proof}
+    
+    We show this in two parts. We first show that if $f(x)$ is continuous at $x_0$ then $F'(x_0)$ exists and equals $f(x_0)$.
+    So we want to show $\lim_{h \to 0} \frac{F(x_0 + h) - F(x_0)}{h} = f(x_0)$.
 
+    We have $\lim_{h \to 0} \frac{F(x_0 + h) - F(x_0)}{h} = 1/h \int_{x_0} ^{x_0 + h} f(t)dt$. Let $M = \sup_{x \in [x_0, x_0 + h]}$ and $m = \inf_{x \in [x_0, x_0 + h]}$.
+    Then certainly $m \leq 1/h \int_{x_0} ^{x_0 + h} f(t)dt \leq M$. 
+    Since $f(x)$ is continuous at $x_0$ we have \\
+    $\forall 1/q, \; \exists 1/n \sp s.t. \sp \forall x \in [a,b] \; |x - x_0| < 1/n$ we have $|f(x) - f(x_0)| < 1/q$, thus $m, M$ must converge to $f(x_0)$.
+    So we have by squeeze theorem \\
+    $\lim_{h \to 0} \frac{F(x_0 + h) - F(x_0)}{h} = 1/h \int_{x_0} ^{x_0 + h} f(t)dt = f(x_0)$
+
+    The second part we show that $F'(x_0)$ DNE if $f(x_0)$ is discontinuous. We say that \\$\lim_{x \to x_0^+} f(x) = q$
+    and $\lim_{x \to x_0^-} f(x)= r$ where $q \neq r$. We examine $\lim_{h \to 0} \frac{F(x_0 + h) - F(x_0)}{h}$ as we approach from both sides.
+    On the left side of zero $\lim_{h \to 0^-}$, $f(x) \to r$, and by the first part $F'(x) \to r$, but on the right side
+    of zero: $\lim_{x \to x_0^+}$, $f(x) \to q$, and by the first part $F'(x) \to q$. Since the limit is not the same from both sides
+    the limit DNE.
+\end{proof}
 
 \end{document}
