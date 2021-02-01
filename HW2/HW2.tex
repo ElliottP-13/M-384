@@ -23,7 +23,7 @@ every $x$ except for a finite number, then $g$ is Riemann integrable.
     
     Let $a_1, a_2, ..., a_N$ denote the points where $g(a_i) \neq f(a_i)$.
     Given any $1/n$ surround each $a_k$ by an interval $I_k$ such that $|I_k| < 1/n$. Then,
-    $g$ is continuous and Riemann integrable on $[a,b]$ with $\cup_{k = 1} ^N I_k$ removed.
+    $g$ equals $f$ and is Riemann integrable on $[a,b]$ with $\cup_{k = 1} ^N I_k$ removed.
 
     Then, we estimate the contribution to the oscillation from the $I_k$ intervals. First, $f$ must be bounded since
     it is Riemann-integrable. Then since $g$ differs from $f$ at a finite number of locations, it must also be bounded. 
@@ -56,7 +56,8 @@ If $f$ is Riemann integrable on $[a, b]$, prove $F(x) = \int_a ^x f(t) dt$ satis
     Without loss of generality assume $x > x_0$. Then by the definition of $F$. 
     We have $$|F(x) - F(x_0)| = \int_a ^x f(t) dt - \int_a ^{x_0} f(t) dt = \int_{x_0} ^x f(t) dt$$ 
     We say $M = \sup_{x \in [a,b]} f(x)$. 
-    Then $$|F(x) - F(x_0)| = \int_{x_0} ^x f(t) dt \leq M |x - x_0|$$ as required.
+    Then since $f(t) \leq M \sp \forall t \in [a,b]$
+     $$|F(x) - F(x_0)| = \int_{x_0} ^x f(t) dt \leq \int_{x_0} ^x M dt = M |x - x_0|$$ as required.
 \end{proof}
 
 \problem{3} 6.2.4 Problem 10
