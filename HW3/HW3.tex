@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage{../EllioStyle}
+
+\title{Homework 3}
+\author{Elliott Pryor}
+\date{14 Feb 2021}
+
+\rhead{Homework 3}
+
+\begin{document}
+\maketitle
+
+\problem{1} 6.3.1 Problem 1
+
+For which values of $a$ and $b$ does the improper integral
+
+$$\int_0 ^{1/2} x^a | \log x|^b dx$$
+exist
+
+
+\textbf{Hint:} Consider $a > -1$, $a < -1$, $a = -1$ separately.
+
+If $a > -1$ then $\exists \epsilon > 0$ such that $a - \epsilon > -1$ or $\epsilon = \frac{a +1}{2}$. 
+Thus we have $$\int_0 ^{1/2} x^a | \log x|^b dx = \int_0 ^{1/2} x^{a - \epsilon} x^\epsilon | \log x|^b dx$$
+Since $\epsilon > 0$, fo any $b$, by L'Hopital's rule (you don't need to prove this), we have $\lim_{x \to 0^+} x^\epsilon |\log x|^b = 0$
+
+So the convergence of the integral is determined by $x^{a - \epsilon}$
+
+If $a < -1$, we use similar argument writing $x^a = x^{a + \epsilon} x ^{- \epsilon}$, and use L'Hopital's rule to show
+$\lim_{x \to 0^+} x^{-\epsilon}| \log x |^b = \infty$
+
+If $a = -1$ use substitutions $u = \log x$ to convert it to a form that the results are known.
+
+\hrule
+
+
+
+
+
+\problem{2} 7.2.4 Problem 1
+
+Give an example of two convergent series $\sum_{k = 1} ^\infty x_k$ and $\sum_{k = 1} ^\infty y_k$
+such that $\sum_{k = 1} ^\infty x_k y_k$ diverges. Can this happen if one of the series is absolutely convergent?
+
+\textbf{Hint:} For the first part, consider the alternating series. 
+For the second part, if one series is absolutely convergent, consider to use the Cauchy Criterion and the fact
+that every term in the other series is bounded.
+
+\hrule
+
+
+
+
+
+\problem{3} 7.2.4 Problem 2
+
+State a contrapositive form of the comparison test that can be used to show divergence of a series
+
+\textbf{Hint} You can assume the terms of both series are non-negative, and you don't need to prove the statement.
+
+
+
+\hrule
+
+
+
+
+
+\problem{4} 7.2.4 Problem 4
+
+Prove the ratio test (Theorem 7.2.3a). What does this tell you if $lim_{n \to \infty} |x_{n+1} / n|$ exists?
+
+\textbf{Hint: } Use comparison test with geometric series, and then use the Cauchy criterion.
+
+\hrule
+
+
+
+
+
+\end{document}
