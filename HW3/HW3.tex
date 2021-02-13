@@ -73,6 +73,20 @@ that every term in the other series is bounded.
 
 \hrule
 
+For the first part, let $x_k = (-1)^k (k)^{-1/2}$ $y_k = (-1)^{k+1} (k)^{-1/2}$.
+So $x_k = -1 + 1/\sqrt{2} - 1/\sqrt{3} + ...$ and $y_k = 1 - 1/\sqrt{2} + 1/\sqrt{3} - ...$.
+Or in other words, $y_k = (-1) x_k$. Clearly both are convergent sequences by alternating series test,
+where $A_n = n^{-1/2}$ which is monotonically decreasing. But $x_k \cdot y_k = (-1) k^{-1}$. So
+$\sum_{k = 1} ^\infty x_k \cdot y_k = (-1) \sum_{k = 1} ^\infty k^{-1}$ which is divergent.
+
+
+For the second part, we use the Cauchy criterion to show that $\sum_{k = 1} ^\infty x_k \cdot y_k$ is convergent.
+Without loss of generality, assume that $x_k$ is absolutely convergent. We know that since $\sum_{k = 1} ^\infty y_k$ is convergent $y_k$ is bounded,
+then $\exists N > 0$ st $|y_k| \leq N$ $\forall k$. Then we show the cauchy criterion: $\forall 1/n \sp \exists m \sp st \sp \forall q \geq p \geq m \sp \left| \sum_{k = p} ^q x_k \cdot y_k \right| < 1/n$: 
+$$ \left| \sum_{k = p} ^q x_k \cdot y_k \right| \leq  \sum_{k = p} ^q \left| x_k \cdot y_k \right| \leq \sum_{k = p} ^q \left| x_k \cdot N \right| = N \sum_{k = p} ^q \left| x_k \right|$$
+which is convergent since $|x_k|$ is convergent.
+
+
 
 
 
