@@ -35,6 +35,31 @@ If $a = -1$ use substitutions $u = \log x$ to convert it to a form that the resu
 
 
 
+\begin{proof}
+    We examine three different cases: $a > -1, a = -1, a < -1$
+
+    Case 1, $a > -1$. Then $\exists \epsilon > 0$ such that $a - \epsilon > -1$. 
+    Thus we have $$\int_0 ^{1/2} x^a | \log x|^b dx = \int_0 ^{1/2} x^{a - \epsilon} x^\epsilon | \log x|^b dx$$
+    Since $\epsilon > 0$, for any $b$, by L'Hopital's rule, we have $\lim_{x \to 0^+} x^\epsilon |\log x|^b = 0$
+    
+    Then the convergence of the integral is dependent on $x^a$. We showed in class that $\int_0 ^1 x^a$ converges for $-1 < a < 0$.
+    Thus the limit exists, and the improper integral $\int_0 ^{1/2} x^a | \log x|^b dx$ is defined for $-1 < a < 0, \sp \forall b$
+
+
+    Case 2, $a = -1$. Then $\int_0 ^{1/2} x^a | \log x|^b dx = \int_0 ^{1/2} x^-1 | \log x|^b dx$. Let $u = \log x$ and $du = 1/x dx$.
+    Then we have $\int_{\log 0} ^{\log 1/2} |u|^b du = \Eval{u ^{b+1}}{-\infty}{\log 1/2}$. This exists if $b < -1$.
+    We know this since this function is similar to $x^c$, which has an integrable singularity at $\infty$ iff $c < -1$.
+    So, the improper integral $\int_0 ^{1/2} x^a | \log x|^b dx$ is defined for $a = -1, b < -1$
+
+    Case 3, $a < -1$. Then $\exists \epsilon > 0$ such that $a + \epsilon < -1$.  Thus we have
+    $$\int_0 ^{1/2} x^a | \log x|^b dx = \int_0 ^{1/2} x^{a + \epsilon} x^{-\epsilon} | \log x|^b dx$$
+    Then, from L'Hopitals rule we know that: $\lim_{x \to 0^+} x^{-\epsilon} |\log x|^b = \infty$
+    Therefore, regardless of choice of $a$. The integral diverges.
+
+    Thus we have the improper integral $\int_0 ^{1/2} x^a | \log x|^b dx$ is defined for $-1 < a < 0, \sp \forall b$, and $a = -1, b < -1$
+
+\end{proof}
+
 
 
 \problem{2} 7.2.4 Problem 1
