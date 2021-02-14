@@ -111,14 +111,29 @@ Then if $\sum_{k=1} ^\infty y_k$ is divergent, then $\sum_{k=1} ^\infty x_k$ is 
 
 \problem{4} 7.2.4 Problem 4
 
-Prove the ratio test (Theorem 7.2.3a). What does this tell you if $lim_{n \to \infty} |x_{n+1} / n|$ exists?
+Prove the ratio test (Theorem 7.2.3a). What does this tell you if $lim_{n \to \infty} |x_{n+1} / x_n|$ exists?
 
 \textbf{Hint: } Use comparison test with geometric series, and then use the Cauchy criterion.
 
 \hrule
 
+\begin{proof}
+    
+    We want to show that if $\left| \frac{x_{n+1}}{x_n} \right| < r$ for all sufficiently large $n$ and $0 < r < 1$
+    then $\sum_{k=1} ^\infty x_n$ converges absolutely.
+
+    We compare this to a geometric series, $y_k = |x_1| r^{k-1}$. So we show that $x_k \leq y_k$. 
+    We have that $\left| \frac{x_{n+1}}{x_n} \right| < r$
+    so $|x_{n+1}| < r \cdot |x_n| < r \cdot r \cdot |x_{n-1}| < \ldots < r^{n} \cdot |x_1|$. 
+
+    So by the comparison test we have that $|x_k| < y_k$. Since $y_k$ is a geometric series, it is convergent.
+    Therefore, $x_k$ is absolutely convergent. 
+
+\end{proof}
 
 
+Then if $lim_{n \to \infty} |x_{n+1} / x_n|$ exists, this tells you that if the limit exists, and is between 0 and 1,
+there exists an $r$ such that $\left| \frac{x_{n+1}}{x_n} \right| < r$ for sufficiently large $n$
 
 
 \end{document}
