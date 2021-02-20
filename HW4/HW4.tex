@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\usepackage{../EllioStyle}
+
+\title{Homework 4}
+\author{Elliott Pryor}
+\date{24 Feb 2021}
+
+\rhead{Homework 4}
+
+\begin{document}
+\maketitle
+
+\problem{1} 7.3.4 Problem 2
+
+Suppose $f_n \to f$ and all functions $f_n$ satisfy the Lipschitz condition
+$|f_n(x) - f_n(y)| \leq M |x-y|$ for some constant $M$, independent of $n$.
+Prove that $f$ also satisfies the same Lipschitz condition
+
+\hrule
+
+
+
+
+
+
+
+
+
+
+\problem{2} 7.3.4 Problem 5
+
+If $\lim_{n \to \infty} f_n = f$ and the functions $f_n$ are all monotone increasing, must $f$ be monotone increasing?
+What happens if $f_n$ are all strictly increasing?
+
+\hrule
+
+
+
+
+
+
+\problem{3} 7.3.4 Problem 6
+
+Give an example of a sequence of continuous functions converging pointwise to a function
+with a discontinuity of the second kind.
+
+\textbf{Hint:} Consider the common domain $\mathbb{D} = [0,1]$ and 
+$$f_n (x) = \begin{cases}
+    nx & 0 \leq x \leq 1/n \\
+    1 & 1/n \leq x \leq 1 \\
+\end{cases}$$
+
+Find another function $g(x)$ which has a discontinuity of the second kind on $\mathbb{D}$ and define 
+$g_n(x) = f_n(x) \cdot g(x)$
+You need to prove that $g_n$ are continuous on $\mathbb{D}$ and converges pointwise to a function with a 
+discontinuity of the second kind.
+
+\hrule
+
+
+
+
+
+\problem{4} 7.3.4 Problem 7
+
+If $|f_n(x)| \leq a_n$ for all $x$, and $\sum_{n = 1}^ \infty a_n$ converges,
+prove that $\sum_{n = 1}^ \infty f_n(x)$ converges uniformly.
+
+\textbf{Hint:}
+The series $\sum_{n = 1}^ \infty f_n(x)$ converges uniformly is the equivalent to that the sequence
+of partial sum functions $F_n(x) = \sum_{k = 1} ^n f_k(x)$ converges uniformly. 
+Then prove $F_n$ satisfies the Cauchy criterion for uniform convergence (Theorem 7.3.1).
+
+\hrule
+
+
+
+
+
+
+\end{document}
