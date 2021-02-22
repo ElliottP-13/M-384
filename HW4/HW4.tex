@@ -96,6 +96,31 @@ discontinuity of the second kind.
 \hrule
 
 
+So we pick $g(x)$ to be the zigzag function. $g(1) = 1, g(1/2) = 0, g(1/4) = 1, ... $ with linear line segments
+connecting the points. We know that $g(x)$ has a discontinuity of the second kind at $x= 0$.
+
+Let $$f_n (x) = \begin{cases}
+    nx & 0 \leq x \leq 1/n \\
+    1 & 1/n \leq x \leq 1 \\
+\end{cases}$$
+
+Then $g_n(x) = f_n(x) \cdot g(x)$. We show that $g_n$ is continuous.
+
+Clearly, for $x > 1/n$ $g_n$ is continuous since $f_n(x) = 1$, so $g_n(x) = g(x)$ which we know to be continuous.
+All the line segments are always continuous of $g$, so we just have to show that the discontinuity of second kind
+at $x = 0$ does not occur.
+
+By the squeeze theorem, $g_n \leq f_n$ for all $x < 1/n$ (this holds for larger than $1/n$ as well).
+Then $\lim_{x\to 0} f_n(x) = 0$. So then using squeeze theorem $\lim_{x\to 0} g_n(x) = 0$.
+Thus there is not a discontinuity of the second kind. There could be a jump discontinuity, so we check
+$g_n(0) = f_n(0) \cdot g(0) = 0 \cdot g(0) = 0$ therefore, $g_n$ is continuous.
+
+So next we show that $g_n$ converges pointwise to $g$. By the construction of $f_n$, we have 
+that for $x > 1/n, \sp g_n(x) = g(x)$. So for any $x$, we choose $n$ large enough such that $1/n < x$, thus $g_n(x) = g(x)$.
+So it converges pointwise to $g$. Since by choosing $n$ large enough $g_n = g$. 
+
+Thus we found a sequence of continuous functions that converge pointwise to a function with a discontinuity of second kind.
+
 
 
 
@@ -110,6 +135,25 @@ of partial sum functions $F_n(x) = \sum_{k = 1} ^n f_k(x)$ converges uniformly.
 Then prove $F_n$ satisfies the Cauchy criterion for uniform convergence (Theorem 7.3.1).
 
 \hrule
+
+\begin{proof}
+    We define the function $F_n(x) = \sum_{k = 1} ^ n f_k(x)$ to be the function of the partial sums. 
+    We show that this converges uniformly.
+    
+    So, we show that $F_n$ satisfies the Cauchy Criterion. 
+
+    $\forall 1/m \sp \exists N \sp st \sp \forall q,p \geq N \sp \forall x \sp |F_q(x) - F_p(x)| \leq 1/m$.
+
+    Without loss of generality, assume $q \geq p$. Then 
+    $|F_q(x) - F_p(x)| = \left| \sum_{i = p} ^q f_i(x) \right| \leq \sum_{i = p} ^q | f_i(x) | \leq \sum_{i = p} ^q a_i$
+
+    Then, by the Cauchy Criterion for Convergence of Series (Theorem 7.2.1):
+    $\forall 1/n \sp \exists m \sp st \sp \forall q \geq p \geq m \sp \left| \sum_{i = p} ^q a_i \right| < 1/n$.
+    We observe that $a_n \geq 0$, so we can drop the absolute values signs $\sum_{i = p} ^q a_i < 1/n$.
+
+    Thus, we have that $\forall 1/n \sp \exists m \sp st \sp \forall q \geq p \geq m \sp |F_q(x) - F_p(x)| \leq \sum_{i = p} ^q a_i  < 1/n$
+
+\end{proof}
 
 
 
