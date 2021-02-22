@@ -19,7 +19,25 @@ Prove that $f$ also satisfies the same Lipschitz condition
 \hrule
 
 
+\begin{proof}
+    We know that by the definition of convergence that $\forall x_0$ the sequence of numbers
+    $f_1(x_0), f_2(x_0), ...$ converges to $f(x_0)$. Then we have that 
+    $\forall 1/n \sp \exists m \sp st \sp \forall k > m \sp |f_k(x_0) - f(x_0) | < 1/n$.
 
+    We want to show that $|f(x) - f(y)| \leq M |x-y|$. So we expand,
+
+    \begin{align*}
+        |f(x) - f(y)| &= |f(x) - f_k(x) + f_k(x) - f(y) + f_k(y) - f_k(y)| \\
+        &\leq |f(x) - f_k(x)|  + |f_k(x) - f_k(y)| + |f(y) - f_k(y)|\\
+        &\leq |f(x) - f_k(x)|  + M|x - y| + |f(y) - f_k(y)|\\
+    \end{align*}
+
+    We can then set $k$ such that $|f(x) - f_k(x)| \leq M |x - y|$, and same for $y$ (we choose the maximum $k$).
+    We know we can do this by the convergence of $f_k$. 
+
+    Then we have $|f(x) - f(y)| \leq  M|x - y| +  M|x - y| +  M|x - y| = 3 M|x - y|$.
+    Thus $f$ satisfies the Lipschitz condition.
+\end{proof}
 
 
 
@@ -34,6 +52,26 @@ What happens if $f_n$ are all strictly increasing?
 
 \hrule
 
+Yes, if $f_n$ are all monotone increasing, then $f$ is monotone increasing.
+
+\begin{proof}
+    By contradiction.
+
+    Suppose not, suppose $\exists y > x, \sp st \sp f(y) < f(x)$ (f decreases).
+    Then the sequence of numbers $f_1(y), f_2(y), ...$ converges to $f(y)$
+    and $f_1(x), f_2(x), ...$ converges to $f(x)$. But since each $f_k(x)$ is monotone increasing.
+    We have $f_1(x) \leq f_1(y), f_2(x) \leq f_2(y), ...$
+    Since non-strict inequality is preserved under the limit: we then have $f(x) \leq f(y)$
+    a contradiction.
+\end{proof}
+
+If $f_n$ are strictly increasing, then $f$ is not necessarily strictly increasing.
+(Just monotone increasing).
+
+Consider the common domain $\mathbb{D} = [2, 10]$. Let $f_n(x) = 1 - 1/nx$.
+Then clearly $f_n$ are strictly increasing since if $x_1 > x_0$, then $1/x_1 < 1/x_0$.
+And $f_n$ converge to $f(x) = 1$. Which is a constant function (by definition still monotone increasing).
+But is clearly not strictly increasing.
 
 
 
