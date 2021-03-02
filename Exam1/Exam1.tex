@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage{../EllioStyle}
+
+\title{Exam 1}
+\author{Elliott Pryor}
+\date{03 March 2021}
+
+\rhead{Exam 1}
+
+\begin{document}
+\maketitle
+
+\problem{1}
+
+True or False
+
+\begin{enumerate}[(a)]
+    \item if $f(x)$ on a finite interval $[a,b]$ is Riemann integrable, 
+    then $f(x)$ can only have jump discontinuities
+    
+    \item If $|f(x)|$ is Riemann integrable on $[a,b]$ 
+    then $f(x)$ is also Riemann integrable on $[a,b]$
+
+    \item if $\sum_{k = 1} ^ \infty a_k$ converges conditionally and 
+    $\sum_{k = 1} ^ \infty b_k$ converges absolutely, 
+    then $\sum_{k = 1} ^ \infty a_k \cdot b_k$ converges absolutely
+
+    \item If $\sum_{k = 1} ^ \infty a_k$ converges conditionally, 
+    then the sum of all positive terms of this series diverges
+
+    \item Let $f_n$ be a sequence of $C^1$ functions defined on $(a,b)$
+    if $f'_n (x)$ converges uniformly to $g(x)$ on $(a,b)$. 
+    Then there exists a $C^1$ function $f$ on $(a,b)$ such that $f_n(x)$ converge uniformly to $f(x)$
+    and $f'(x) = g(x)$
+\end{enumerate}
+
+
+\problem{2}
+
+Give the statement (using quantifiers) that a sequence of functions $f_n(x)$ 
+on a common domain $\mathbb{D}$ does \textbf{NOT} converge uniformly to a function
+$f(x)$ on $\mathbb{D}$
+
+\hrule
+
+
+
+
+
+
+
+
+\problem{3}
+
+Compute the radius of convergence of the power series 
+$$\sum_{n=0} ^ \infty \frac{4n^5 - 7n + 2}{3^n} x^n$$
+
+\hrule
+
+
+
+
+
+
+\problem{4}
+
+Prove the first part of the linearity of Riemann Integral. 
+Namely, if both $f(x)$ and $g(x)$ are Riemann integrable on $[a,b]$, 
+then $f+g$is Riemann integrable on $[a,b]$, and 
+
+$$\int_a ^b (f + g)(x)dx = \int_a ^b f(x) dx + \int_a ^b g(x) dx$$
+
+Here $(f + g)(x) = f(x) + g(x)$
+
+\textbf{Hint:} Use part (e) of Theorem 6.2.1 and linear property of Cauchy sum
+
+
+
+
+
+
+
+
+
+
+
+\problem{5}
+
+Let $b_1, b_2, ...$ be a sequence of postiive numbers convergint monotonically to zero:
+$b_1 \geq b_2 \geq b_3 ...$ and $\lim_{n \to \infty} b_n = 0$.
+If $|a_n| \leq b_n - b_{n+1}$ for all $n$. Prove:
+$\sum_{n=1}^\infty a_n$ converges absolutely.
+
+\hrule
+
+
+
+
+
+
+
+\problem{6a}
+
+Let $f_n(x) \to f(x)$ uniformly on a finite interval $[a,b]$ and all $f_n(x)$
+are Riemann integrable on $[a,b]$. Define $F_n (x) = \int_a ^x f_n(t)dt$.
+Prove that $F_n \to F$ uniformly on $[a,b]$ for some $F(x)$, 
+and give the expression of the limit function $F(x)$.
+
+\hrule
+
+
+\problem{6b}
+
+Is the same true on the whole line? Namely, let $f_n(x) \to f(x)$ uniformly on the entire real line $\reals$
+, and all $f_n(x)$ are Riemann integrable on any finite interval. Define $F_n(x) = \int_0 ^x f_n(t) dt$.
+Is it always true that $F_n(x) \to F(x)$ uniformly on $\reals$ for some $F$?
+Prove it if your answer is Yes, or give a counter example if your answer is No.
+
+\hrule
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -32,10 +32,10 @@ Prove that $f$ also satisfies the same Lipschitz condition
         &\leq |f(x) - f_k(x)|  + M|x - y| + |f(y) - f_k(y)|\\
     \end{align*}
 
-    We can then set $k$ such that $|f(x) - f_k(x)| \leq M |x - y|$, and same for $y$ (we choose the maximum $k$).
-    We know we can do this by the convergence of $f_k$. 
-
-    Then we have $|f(x) - f(y)| \leq  M|x - y| +  M|x - y| +  M|x - y| = 3 M|x - y|$.
+    We know by the convergence of $f_k$, that $|f(x) - f_k(x)|$ can be made arbitrarily small (same for $|f(y) - f_k(y)|$).
+    So, $\lim_{k \to \infty} |f(x) - f_k(x)| = 0$ (same for $y$).
+    Then since non-strict inequality is preserved under the limit: 
+    We have $|f(x) - f(y)| \leq   M|x - y|$.
     Thus $f$ satisfies the Lipschitz condition.
 \end{proof}
 
