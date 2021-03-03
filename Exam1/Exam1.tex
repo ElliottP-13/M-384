@@ -83,7 +83,7 @@ $\frac{1}{R} = \limsup_{n \to \infty} \sup \sqrt[n]{|a_n|}$
     &= \frac{1}{3}
 \end{align*}
 (the numerator of the last step comes from the lemma that we used for 7.4.1
-Or from the example we did showing radius of convergence of $a_n = p(n)/q(n)$ is 1)
+Or from the example we did showing radius of convergence of $a_n = p(n)/q(n)$ is 1, since $4n^5 -7n +2$ is a polynomial)
 
 So $R = 3$
 
@@ -94,7 +94,7 @@ So $R = 3$
 
 Prove the first part of the linearity of Riemann Integral. 
 Namely, if both $f(x)$ and $g(x)$ are Riemann integrable on $[a,b]$, 
-then $f+g$is Riemann integrable on $[a,b]$, and 
+then $f+g$ is Riemann integrable on $[a,b]$, and 
 
 $$\int_a ^b (f + g)(x)dx = \int_a ^b f(x) dx + \int_a ^b g(x) dx$$
 
@@ -103,8 +103,24 @@ Here $(f + g)(x) = f(x) + g(x)$
 \textbf{Hint:} Use part (e) of Theorem 6.2.1 and linear property of Cauchy sum
 
 
+\hrule
 
 
+\begin{proof}
+    We take the Cauchy sum: $S(f+g, P)$ and show that it converges to $\int_a ^b f(x) dx + \int_a ^b g(x) dx$.
+    
+    Since $f,g$ are both bounded functions, then $f + g$ must also be bounded.
+
+    By linearity of Cauchy sums, we have $S(f+g, P) = S(f, P) + S(g,P)$.
+    By Theorem 6.2.1 part $e$, we have $S(f, P) \to \int_a ^b f(x) dx$ as the maximum
+    interval length of P tends to zero. 
+
+    So as $|P| \to 0$ we have that $S(f+g, P) = \int_a ^b (f + g)(x)dx$.
+    We use the linearity of $S$ to find what the value of this is.
+    $S(f+g, P) = S(f, P) + S(g,P) = \int_a ^b f(x) dx + \int_a ^b g(x) dx$
+    by Theorem 6.2.1 and $f,g$ are Riemann Integrable.
+
+\end{proof}
 
 
 
@@ -114,14 +130,29 @@ Here $(f + g)(x) = f(x) + g(x)$
 
 \problem{5}
 
-Let $b_1, b_2, ...$ be a sequence of postiive numbers convergint monotonically to zero:
+Let $b_1, b_2, ...$ be a sequence of positive numbers convergent monotonically to zero:
 $b_1 \geq b_2 \geq b_3 ...$ and $\lim_{n \to \infty} b_n = 0$.
 If $|a_n| \leq b_n - b_{n+1}$ for all $n$. Prove:
 $\sum_{n=1}^\infty a_n$ converges absolutely.
 
 \hrule
 
+\begin{proof}
+    
+    We show that $\sum_{n=1}^\infty a_n$ converges absolutely. So we show that:
+    $\sum_{n=1}^\infty |a_n|$ converges by the Cauchy Criterion.
 
+    $\forall 1/n \sp \exists m \sp st \sp \forall q \geq p \geq m \sp \sum_{k = p} ^q |a_k| < 1/n$.
+    Since we know that $a_n$ is a sequence of positive numbers converging monotonically to zero:
+    $b_n - b_{n+1} \geq 0$, so we can drop the absolute value symbol since all terms are positive.
+
+    Then $\sum_{k = p} ^q a_k = b_p - b_{p+1} + b_{p+1} - b_{p+2} + b_{p+2} + ... - b_q + b_{q} - b_{q+1} = b_p - b_{q+1}$
+    Since the sequence $b_n$ converges to zero, we can choose $m$ large enough that $b_m < 1/n$.
+    Thus since $b_m \geq b_p \geq b_{q+1}$, we know that $b_p - b_{q+1} < 1/n$.
+
+
+
+\end{proof}
 
 
 
@@ -137,6 +168,25 @@ and give the expression of the limit function $F(x)$.
 \hrule
 
 
+\begin{proof}
+
+    We want to show that: 
+    $\forall 1/m \sp \exists N \sp st \sp \forall x \in [a,b] \sp \forall n \geq N \sp |F_n(x) -F(x)| < 1/m$
+
+    $|F_n(x) - F(x)| = \left|\int_a ^x f_n(t)dt - \int_a ^x f(x) dx \right|$
+    Which then by linearity of the integral we have 
+    $\left|\int_a ^x f_n(t)dt - \int_a ^x f(x) dx \right| = \left|\int_a ^x (f_n(t) - f(t)) dt \right| \leq \int_a ^x |f_n(t) - f(t)| dt $
+
+    But since $f_n \to f$ uniformly: 
+    $\exists N \sp st \sp \forall x \in [a,b] \sp \forall n \geq N \sp |f_n(x) -f(x)| < \frac{1}{m (b - a)}$.
+
+    Then we have that $\int_a ^x |f_n(t) - f(t)| dt \leq \int_a ^x \frac{1}{m (b - a)} dt \leq \int_a ^b \frac{1}{m (b - a)} = 1/m$.
+\end{proof}
+
+
+
+
+
 \problem{6b}
 
 Is the same true on the whole line? Namely, let $f_n(x) \to f(x)$ uniformly on the entire real line $\reals$
@@ -146,7 +196,13 @@ Prove it if your answer is Yes, or give a counter example if your answer is No.
 
 \hrule
 
+No,
 
+The problem comes in when we take $x \to \infty$.
+If we take the sequence of constant functions $f_n (x) = (10 - 1/n)$ they clearly converge uniformly to $f(x) = 10$.
+$F_n$ also converges uniformly to $F$ on any finite interval. But consider $\lim_{x \to \infty} |F_n(x) - F(x)|$.
+$|F_n(x) - F(x)| = 1/n \cdot x$. We cannot choose an $N$ large enough such that for $n \geq N$, $x/n < 1/m \sp \forall x$.
+Since we can always increase $x$ slightly to make $x/n > 1/m$.
 
 
 
