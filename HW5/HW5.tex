@@ -54,7 +54,7 @@ show that $f(x)/(x - x_0)$ is analytic in the same neighborhood.
 \problem{2} 7.4.5 Problem 6
 
 Prove that if $f(x)$ is analytic on $(a,b)$, then $F(x) = \int_c ^x f(t)dt$ 
-is also analytic onf $(a,b)$, where $c$ is any point in $(a,b)$
+is also analytic on $(a,b)$, where $c$ is any point in $(a,b)$
 
 \textbf{Hint:} You need to prove that for any $x_0 \in (a,b)$, $F(x)$ has
 a power series expansion about $x_0$ for $x$ close to $x_0$.
@@ -63,6 +63,32 @@ Now pick any fixed $x_0 \in (a,b)$ and write $F(x)$ as:
 $$F(x) = \int_c ^x f(t) dt = \int_c ^{x_0} f(t) dt + \int_{x_0} ^x f(t) dt = C_0 + \int_{x_0} ^x f(t)dt$$
 
 \hrule
+
+\begin{proof}
+    
+    We need to show that $F(x)$ has a power series expansion about any point $x_0 \in (a,b)$.
+    So we pick any fixed $x_0 \in (a,b)$.
+    Then: $F(x) = \int_c ^x f(t) dt = \int_c ^{x_0} f(t) dt + \int_{x_0} ^x f(t) dt = C_0 + \int_{x_0} ^x f(t)dt$
+    Then we can write $f(t) = \sum_{n=0} ^\infty a_n (x-x_0)^n$
+    since it is analytic on $(a,b)$ and $x_0 \in (a,b)$, so $f$ has a power series expansion about $x_0$.
+
+    So we have:
+
+    \begin{align*}
+        F(x) &= C_0 + \int_{x_0} ^x f(t)dt\\
+        &= C_0 + \int_{x_0} ^x \sum_{n=0} ^\infty a_n (t-x_0)^n dt\\
+        &= C_0 + \sum_{n=0} ^\infty a_n \int_{x_0} ^x  (t-x_0)^n dt \quad \quad \text{By linearity of integral}\\
+        &= C_0 + \sum_{n=0} ^\infty  a_n \left(  1/(n+1) (t-x_0)^{n+1} \right| _{x_0}^x\\
+        &= C_0 + \sum_{n=0} ^\infty  a_n \left(  1/(n+1) (x-x_0)^{n+1} - 1/(n+1) (x_0-x_0)^{n+1}\right)\\
+        &= C_0 + \sum_{n=0} ^\infty  a_n/(n+1) (x-x_0)^{n+1}\\
+    \end{align*}
+
+    Let $b_0 = C_0$ and $b_n = \frac{a_{n-1}}{n+1}$ for $n \geq 1$. Then we have:
+    $F(x) = \sum_{n=0} ^\infty b_n (x-x_0)^{n+1}$. 
+
+
+
+\end{proof}
 
 
 
