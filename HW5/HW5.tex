@@ -19,7 +19,32 @@ show that $f(x)/(x - x_0)$ is analytic in the same neighborhood.
 
 \hrule
 
+\begin{proof}
+    
+    Since $f$ is analytic around $x_0$ we can write it as the power series: 
+    $f(x) = \sum{n=0} ^\infty a_n (x - x_0)^n = a_0 + a_1 (x - x_0) + a_2 (x - x_0)^2$.
+    Then $f(x_0) = a_0 = 0$ by definition of $f$.  
 
+    So then we can write it as $\sum{n=1} ^\infty a_n (x - x_0)^n = a_1 (x - x_0) + a_2 (x - x_0)^2$.
+    We can divide by $x - x_0$: $\sum{n=1} ^\infty a_n (x - x_0)^{n-1}$.
+    We then let $n' = n-1$ so we have\\
+    $\frac{f(x)}{x-x_0} = \sum_{n'=0} ^\infty a_{n'+1} (x - x_0)^{n'}$
+    which is a power series expansion about $x_0$.
+
+    Then in order to show that they are analytic we just need to show that they have the same radius of convergence.
+    Then by analytic continuation they are analytic on the same neighborhood $(x_0 - R, x_0 + R)$.
+    We know that $\limsup_{n \to \infty} |a_n|^{1/n} = 1/R$ by definition.
+    We need to show that $\limsup_{n \to \infty} |a_{n+1}|^{1/n} = 1/R$
+
+    \begin{align*}
+        \limsup_{n \to \infty} |a_{n+1}|^{1/n} \\
+        \limsup_{n \to \infty} |a_{n+1}|^{\frac{1}{n+1} \cdot \frac{n+1}{n}}\\
+        \limsup_{n \to \infty} \left(|a_{n+1}|^{\frac{1}{n+1}}\right)^{\frac{n+1}{n}}\\
+        \limsup_{n \to \infty} (1/R)^{\frac{n+1}{n}}\\
+        1/R
+    \end{align*}
+    where the last step follows from $\lim_{n \to \infty} \frac{n+1}{n} = 1$
+\end{proof}
 
 
 
