@@ -86,8 +86,6 @@ $$F(x) = \int_c ^x f(t) dt = \int_c ^{x_0} f(t) dt + \int_{x_0} ^x f(t) dt = C_0
     Let $b_0 = C_0$ and $b_n = \frac{a_{n-1}}{n+1}$ for $n \geq 1$. Then we have:
     $F(x) = \sum_{n=0} ^\infty b_n (x-x_0)^{n+1}$. 
 
-
-
 \end{proof}
 
 
@@ -104,8 +102,11 @@ Compute the power-series expansion of $f(x) = \frac{x^2}{1-x^2}$ about $x=0$
 \hrule
 
 
-
-
+Let $u = x^2$, then $f(u) = \frac{u}{1-u} = u \left( \frac{1}{1-u} \right)$.
+We know that $g(u) = \frac{1}{1-u}$ has power series expansion: $\sum_{n=0} ^\infty u^n$ for $|u| < 1$.
+And $f(u) = u \cdot h(u) = u \cdot \sum_{n=0} ^\infty u^n = \sum_{n=0} ^\infty u^{n+1}$.
+Then we can substitute back in $u = x^2$: $f(x) = \sum_{n=0} ^\infty x^{2n+2}$.
+This works for $|u| = x^2 < 1$.
 
 
 
@@ -121,7 +122,18 @@ Compute the radius of convergence of the following power series:
 
 \hrule
 
+\begin{enumerate}[a.]
+    \item $1/R = \limsup_{n \to \infty} |n^4/n!|^{1/n} = 
+    \limsup_{n \to \infty} \frac{(n^4)^{1/n}}{(n!)^{1/n}} = 0$.
+     Since we know that $(n^4)^{1/n} \to 1$, and $(n!)^{1/n} \to \infty$. So $R = \infty$
+    
+    \item $1/R = \limsup_{n \to \infty} |\sqrt{n}|^{1/n} = \limsup_{n \to \infty} (n ^{1/2})^1/n =
+    \limsup_{n \to \infty} (n ^{1/n})^{1/2} = 1^{1/2} = 1$. So $R = 1$.
 
+    \item $1/R = \limsup_{n \to \infty} (n^2 2^n) ^{1/n} = \limsup_{n \to \infty} (n^2)^{1/n} (2^n) ^{1/n} =
+    = 1 \cdot 2$. So $R = 1/2$
+
+    \end{enumerate}
 
 
 \end{document}
