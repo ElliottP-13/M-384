@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{../EllioStyle}
+
+\title{Homework 5}
+\author{Elliott Pryor}
+\date{08 March 2021}
+
+\rhead{Homework 5}
+
+\begin{document}
+\maketitle
+
+\problem{1} 7.4.5 Problem 2
+
+If $f$ is analytic in a neighborhood of $x_0$ and $f(x_0) = 0$, 
+show that $f(x)/(x - x_0)$ is analytic in the same neighborhood.
+
+\textbf{Hint:} Write $f(x)$ as a power series expanded at $x_0$ and pay attention to what is $a_0$
+
+\hrule
+
+
+
+
+
+
+
+
+\problem{2} 7.4.5 Problem 6
+
+Prove that if $f(x)$ is analytic on $(a,b)$, then $F(x) = \int_c ^x f(t)dt$ 
+is also analytic onf $(a,b)$, where $c$ is any point in $(a,b)$
+
+\textbf{Hint:} You need to prove that for any $x_0 \in (a,b)$, $F(x)$ has
+a power series expansion about $x_0$ for $x$ close to $x_0$.
+Now pick any fixed $x_0 \in (a,b)$ and write $F(x)$ as:
+
+$$F(x) = \int_c ^x f(t) dt = \int_c ^{x_0} f(t) dt + \int_{x_0} ^x f(t) dt = C_0 + \int_{x_0} ^x f(t)dt$$
+
+\hrule
+
+
+
+
+
+
+
+
+\problem{3} 7.4.5 Problem 7 a.
+
+Compute the power-series expansion of $f(x) = \frac{x^2}{1-x^2}$ about $x=0$
+
+\hrule
+
+
+
+
+
+
+
+\problem{4}
+
+Compute the radius of convergence of the following power series:
+
+\begin{enumerate}[a.]
+    \item $\sum (n^4/n!) \cdot x^n$
+    \item $\sum \sqrt{n} x^n$
+    \item $(n^2 2^n) x^n$
+\end{enumerate}
+
+\hrule
+
+
+
+
+\end{document}
