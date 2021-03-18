@@ -17,7 +17,10 @@ such that $f- P$ and its first derivative vanish at the endpoints of the interva
 
 \hrule
 
-
+\begin{proof}
+    
+    
+\end{proof}
 
 
 
@@ -33,7 +36,16 @@ consider $g_n(x) = f_n(x) - f_n(c)$
 \hrule
 
 
+\begin{proof}
+    
+    Let $f_n$ be the sequence of polynomials approximating $f$ by the Wierstrass Approximation Theorem
+    By WAT, we know that $f_n \to f$ uniformly. Thus
+    $\forall 1/m \sp \exists N \sp st \sp \forall n \geq N \sp \forall x \in [a,b] \sp |f_n(x) - f(x)| \leq 1/m$.
+    So we know that at $x = c$ we have $\forall 1/m \sp \exists N \sp st \sp \forall n \geq N \sp |f_n(c)| \leq 1/m$
+    Which converges to $0$. Thus $f_n \to 0$ at $c$. So the polynomials approximating $f$ may be 
+    taken to vanish at $c$.
 
+\end{proof}
 
 
 \problem{3} 7.5.5 Problem 14
@@ -47,5 +59,17 @@ consider $g_n(x) = f_n(x) - f_n(c)$
 \end{enumerate}
 
 \hrule
+
+\begin{enumerate}[(a)]
+
+    \item We know the integration by parts formula $\int u dv = uv - \int v du$ from calculus
+    Let $u = (1-x^2)^m$, and $v = x$. Then $dv = dx$ and $du = m \cdot (1 - x^2)^{m-1} (-2x) = -2mx(1 - x^2)^{m-1}$
+    \begin{align*}
+        c_m &= \int_{-1} ^1 (1-x^2)^m dx\\
+        &= \Eval{x(1-x^2)^m}{-1}{1} - \int_{-1} ^1 x \cdot -2mx(1 - x^2)^{m-1} dx \\
+        &= 0 - \int_{-1} ^1 -2m \cdot x^2(1 - x^2)^{m-1} dx \\
+    \end{align*}
+
+\end{enumerate}
 
 \end{document}
