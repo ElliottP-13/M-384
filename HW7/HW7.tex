@@ -37,6 +37,10 @@ but not uniformly bounded
 
 \hrule
 
+$f_n = x + n$. Is uniformly equicontinuous since can choose $n = m$. But is not uniformly bounded
+since $f_m \to \infty$ as $n \to \infty$.
+
+
 
 
 \problem{3} 7.6.3 Problem 6
@@ -55,7 +59,26 @@ family are uniformly bounded.
 
 \hrule
 
+\begin{proof}
+    
+Consider the derivatives of the family of functions:
+$p'(x) = c_1 + 2 c_2 x + 3 c_3 x^2 + \dots + N c_{N} x ^{N-1}$
+Then let $g$ be the polynomial with all coefficients = 1:
+$g(x) = 1 + x + x^2 + \dots + x^N$, and $g'(x) = 1 + 2x + 3x^2 + \dots + N x^{N-1}$
 
+Then clearly outside of $(-1,1)$ $p \leq g$ and $p' \leq g'$ for any $p$ in the family.
+And inside $(-1, 1)$, $p'(x) \leq \sum_{i = 0} ^n i$ since for any term
+$i \cdot c_i x^{i-1} \leq i \cdot x^{i-1} \leq i$ inside $x \in (-1,1)$.
+We call this summation $e = \sum_{i = 0} ^n i$. And let $f = \sup_{x \in [a,b]} g'(x)$
+which we know exists since $g'$ is continuous.
+
+Then let $M = \max (e, f)$. So then clearly $p'$ is uniformly bounded by $M$.
+
+Then copied from the proof of Corollary 7.6.1: by MVT
+$\forall x, y \in [a,b] \sp \forall k \sp |f_k(x) - f_k(y)| = |f'_k(z)(x-y)| \leq |f'_k(z)||x-y| \leq M|x-y| < 1/m$
+by choosing $1/n > \frac{1}{mM}$.
+Thus all $p$ are equicontinuous
+\end{proof}
 
 
 \problem{4} 7.6.3 Problem 9
