@@ -97,7 +97,36 @@ $$f_n(x) = \begin{cases}
 
 \hrule
 
+\begin{proof}
 
+    Let $\{f_n\}$ be:
+
+    $$f_n(x) = \begin{cases}
+        0 & x \leq n-1\\
+        x - (n-1) & n-1 < x \leq n\\
+        1 & x > n
+    \end{cases}$$
+
+    Clearly $f_n$ are uniformly bounded by $M = 1$ for all $x \in \reals$.
+    Then we show that it is equicontinuous:
+    $\forall 1/m \sp \exists 1/n \sp st \sp |x - y| < 1/n \implies |f_k(x) - f_k(y)| < 1/m \sp \forall k$
+    If $x,y \notin (n-1, n]$ then $|f_k(x) - f_k(y)| = 0$.
+    So then we only need to consider the middle portion. This is just
+    a line of slope 1 with x-intercept at $n-1$, so it slants from 0, to 1 over interval $[n-1, n]$.
+    If $x,y \in (n-1, n]$ then choose $1/n = 1/m$ since: 
+    $|f_k(x) - f_k(y)| = |x - (n-1) - y + (n-1)| = |x-y|$
+    if only $x$ or $y$ are in $(n-1, n]$ then also choose $1/n = 1/m$
+    since $(x,y)$ spans the 'corner' of the function, so $|f_k(x) - f_k(y)| \leq |x-y|$.
+
+    Consider any subsequence of $f_n$. Then suppose it meets the uniform convergence criteria.
+    So then the Cauchy criteria is met:
+    $\forall 1/m \sp \exists N \sp st \sp \forall j,k \geq N \sp \forall x \in \reals |f_j(x) - f_k(x)| < 1/m$
+    Consider $k \geq j + 4$ and $x = j + 2$. Then $f_j(j + 2) = 1$
+    and $f_k(j + 2) = 0$ Thus $f_j(x) - f_k(x) = 1 > 1/m$ for $m > 1$.
+    We can always do this for any $j,k$. So it violates the Cauchy criterion
+    for any subsequence, thus there are no uniformly convergent subsequences.
+
+\end{proof}
 
 
 
