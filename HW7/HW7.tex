@@ -18,6 +18,16 @@ equicontinuous
 
 \hrule
 
+\begin{proof}
+    
+    By definition of uniform equicontinuity we need to show:
+    $\forall 1/m \sp \exists 1/n \sp st \sp |x - y| < 1/n \implies |f_k(x) - f_k(y)| < 1/m \sp \forall k$
+    We have from the definition of $f_n$ that $|f_n(x) - f_n(y)| \leq M |x - y|^\alpha$,
+    So $|f_k(x) - f_k(y)| \leq M |x - y|^\alpha \leq M (1/n)^\alpha$ which we need to be $< 1/m$.
+    So we choose $1/n < \sqrt[\alpha]{\frac{1}{Mm}}$ since $M, \alpha$ are defined and $\alpha > 0$
+    we can compute this for any $1/m$ as required.
+\end{proof}
+
 
 
 \problem{2} 7.6.3 Problem 5
