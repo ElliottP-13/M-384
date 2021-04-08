@@ -74,16 +74,53 @@ the chain rule.
 \problem{3} 10.1.5 Problem 13
 
 Compute $df$ of 
-\begin{enumerate}
+\begin{enumerate}[a.]
     \item $f: \reals^2 \to \reals, \sp f(x_1, x_2) = x_1 e^{x_2}$
-    \item $f: \reals^3 \to \reals, \sp f(x_1, x_2, x_3) = (x_3, x_2)$
+    \item $f: \reals^3 \to \reals^2, \sp f(x_1, x_2, x_3) = (x_3, x_2)$
     \item $f: \reals^2 \to \reals^3, \sp f(x_1, x_2) = (x_1, x_2, x_1\cdot x_2)$
 \end{enumerate}
 
 \hrule
 
 
+We know that for the differential matrix $df$ we know that 
+$df_{k,j} = \frac{\partial f_k}{\partial x_j}$
 
+\begin{enumerate}[a.]
+    \item $f: \reals^2 \to \reals, \sp f(x_1, x_2) = x_1 e^{x_2}$
+    There is just one, $f_k$ and there are $x_1, x_2$. So we have that 
+    $$df = \begin{bmatrix}
+        \frac{\partial f}{\partial x_1} & \frac{\partial f}{\partial x_2}
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        e^{x_2} & x_1 e^{x_2}
+    \end{bmatrix}$$
+
+    \item $f: \reals^3 \to \reals^2, \sp f(x_1, x_2, x_3) = (x_3, x_2)$
+    
+    $$df = \begin{bmatrix}
+        \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \frac{\partial f_1}{\partial x_3}\\
+        \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \frac{\partial f_2}{\partial x_3}
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        0 & 0 & 1 \\
+        0 & 1 & 0 \\
+    \end{bmatrix}$$
+
+    \item $f: \reals^2 \to \reals^3, \sp f(x_1, x_2) = (x_1, x_2, x_1\cdot x_2)$
+    
+    $$df = \begin{bmatrix}
+        \frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2}\\
+        \frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2}\\
+        \frac{\partial f_3}{\partial x_1} & \frac{\partial f_3}{\partial x_2}
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1, 0 \\
+        0, 1 \\
+        x_2, x_1
+    \end{bmatrix}$$
+
+\end{enumerate}
 
 
 
