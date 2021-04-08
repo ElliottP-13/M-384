@@ -13,12 +13,22 @@
 \problem{1} 10.1.5 Problem 3
 
 If $f$ is differentiable at $y$, show that $d_uf(y)$ is linear in $u$,
-meaning $d_{(au + bv)}f(y) = a d_u(y) + b_v f(y)$.
+meaning $d_{(au + bv)}f(y) = a d_u(y) + b d_v f(y)$.
 
 \textbf{Hint:} Apply Theorem 10.1.1
 
 \hrule
 
+
+\begin{proof}
+    
+    We know from theorem 10.1.1, since $f$ is differentiable at $y$, then
+    $d_{(au + bv)}f(y) = df(y) (au + bv) = a \cdot df(y) u + b \cdot df(y)  v$
+    since matrix multiplication is distributive. 
+    We then recognize that $df(y) u$ has the form (from theorem 10.1.1) of $d_u(y)$,
+    and similarly for $df(y) v$. So we have 
+    $d_{(au + bv)}f(y) = df(y) (au + bv) = a \cdot df(y) u + b \cdot df(y)  v = a d_u(y) + b d_v f(y)$
+\end{proof}
 
 
 
