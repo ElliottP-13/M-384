@@ -67,6 +67,12 @@ joining $x$ and $y$, show that $f(y) = f(x) +  \nabla(z) \cdot (y - x)$ for some
 point $z$ on the line segment. Explain why this is an $n$-dimensional
 analog of the mean value theorem
 
+
+\textbf{Hint:} Define function $g : [0, 1] \to \reals^n$ by $g(t) = x + t(y - x)$
+and consider the composition function 
+$$h(t) = (f \circ g)(t) = f(g(t)) : \reals \to \reals$$
+Apply Mean Value Theorem to $h(t)$ for $h(1)- h(0)$ and use the chain rule (formula derived
+in problem 10 above) to calculate $h'$
 \hrule
 
 
