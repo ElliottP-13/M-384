@@ -46,7 +46,25 @@ the chain rule.
 \hrule
 
 
+\begin{proof}
+    
+    we know the Chain rule in general is: 
+    $$\frac{\partial f}{\partial x_j} = \sum_{k = 1} ^n \frac{\partial f}{\partial z_k} \frac{\partial z_k}{\partial x_j}$$
+    where $z_k = g_k(x_1, \dots x_n)$.
 
+    In our case, we are looking for $x_j = t$, and $g(t) = (g_1(t), \dots, g_n(t)), t \in [a,b]$
+    So $z_k = g_k(t)$.
+
+    So we have 
+    $$\frac{\partial f}{\partial t} = \sum_{k = 1} ^n \frac{\partial f}{\partial z_k} \frac{\partial g_k(t)}{\partial t}$$
+    $\frac{\partial g_k(t)}{\partial t}$ is just a number (scalar), so we can write this as two separate sums:
+    $\sum_{k = 1} ^n \frac{\partial f}{\partial z_k} + \sum_{k = 1} ^n \frac{\partial g_k(t)}{\partial t}$.
+    Then clearly this is just the sum of all partial derivatives of each function, which is the differential $df, dg$
+    So we have:
+
+    $$\frac{\partial f}{\partial t} = df \, dg$$
+
+\end{proof}
 
 
 
