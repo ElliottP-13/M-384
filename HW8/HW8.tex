@@ -58,11 +58,12 @@ the chain rule.
     So we have 
     $$\frac{\partial f}{\partial t} = \sum_{k = 1} ^n \frac{\partial f}{\partial z_k} \frac{\partial g_k(t)}{\partial t}$$
     $\frac{\partial g_k(t)}{\partial t}$ is just a number (scalar), so we can write this as two separate sums:
-    $\sum_{k = 1} ^n \frac{\partial f}{\partial z_k} + \sum_{k = 1} ^n \frac{\partial g_k(t)}{\partial t}$.
-    Then clearly this is just the sum of all partial derivatives of each function, which is the differential $df, dg$
+    $\sum_{k = 1} ^n \frac{\partial f}{\partial z_k} * \sum_{k = 1} ^n \frac{\partial g_k(t)}{\partial t}$.
+    Then clearly this is just the sum of all partial derivatives of each function, which is the differential $df, dg$.
+    We also note that this $df = \nabla f$ since $f: \reals ^n \to \reals$.
     So we have:
 
-    $$\frac{\partial f}{\partial t} = df \, dg$$
+    $$\frac{\partial f}{\partial t} = df \, dg/dt = \nabla f * dg/dt$$
 
 \end{proof}
 
@@ -128,7 +129,7 @@ $df_{k,j} = \frac{\partial f_k}{\partial x_j}$
 \problem{4} 10.1.5 Problem 15
 
 If $f: D \to \reals$ is $C^1$ with $D \subseteq \reals^n$ and $D$ contains the line segment
-joining $x$ and $y$, show that $f(y) = f(x) +  \nabla(z) \cdot (y - x)$ for some
+joining $x$ and $y$, show that $f(y) = f(x) +  \nabla f(z) \cdot (y - x)$ for some
 point $z$ on the line segment. Explain why this is an $n$-dimensional
 analog of the mean value theorem
 
@@ -140,6 +141,28 @@ Apply Mean Value Theorem to $h(t)$ for $h(1)- h(0)$ and use the chain rule (form
 in problem 10 above) to calculate $h'$
 \hrule
 
+
+\begin{proof}
+    
+    Let $g : [0, 1] \to \reals^n$ by $g(t) = x + t(y - x)$, and let $h$ be the composition
+    function: $h(t) = (f \circ g)(t) = f(g(t)) : \reals \to \reals$.
+    By our definition of $g$: $g(0) = x, \; g(1) = y$ and $g(t)$ is on the straight line-segment
+    joining $x$ to $y$. Thus the image of $g \in D$. Then $f \in C^1$ so $h$ is differentiable.
+
+    From problem 10: we know that $d/dt (h) = \nabla f * dg/dt$, and we know that $dg/dt = (y-x)$ by definition of $g$.
+    Then by Mean value Theorem we know that
+    there exists a $z$ such that: $(1-0) * h'(z) = h(1) - h(0) = f(g(1)) - f(g(0)) = f(y) - f(x)$
+    Since we know $h' = dh/dt = \nabla f(z) * (y - x)$ we have:
+    $f(y) - f(x) = \nabla f(z)(y - x)$ we simply re-arrange this to get:
+    $$f(y) = f(x) + \nabla f(z)(y-x)$$
+\end{proof}
+
+We see that this is the mean value theorem by further re-arranging: 
+$\nabla f(z) = df(z)$ since $f: \reals ^n \to \reals$
+
+$$df(z) = \frac{f(y) - f(x)}{y-x}$$
+
+which exactly matches the mean value theorem.
 
 
 
