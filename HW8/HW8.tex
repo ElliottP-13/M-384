@@ -157,12 +157,16 @@ in problem 10 above) to calculate $h'$
     $$f(y) = f(x) + \nabla f(z)(y-x)$$
 \end{proof}
 
-We see that this is the mean value theorem by further re-arranging: 
-$\nabla f(z) = df(z)$ since $f: \reals ^n \to \reals$
+We first note that:
+$\nabla f(z) = df(z)$ since $f: \reals ^n \to \reals$.
+So our equation is $f(y) = f(x) + d f(z)(y-x)$
 
-$$df(z) = \frac{f(y) - f(x)}{y-x}$$
+We can re-arrange the classic MVT: $f'(z) = \frac{f(y) - f(x)}{y - x}$ to get:
+$f'(z)(y - x) + f(x) = f(y)$
+Which matches our equation. 
 
-which exactly matches the mean value theorem.
+Essentially we have some point $z$ on the line segment, such that the derivative at that point
+is the average change in the function's value ($f(y) - f(x) = \nabla f(z)(y - x)$) across the interval.
 
 
 
