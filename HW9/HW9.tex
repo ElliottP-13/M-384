@@ -79,7 +79,7 @@ $$f(x,y) = \begin{cases}
 
 
 
-    
+
     \item We compute the second partial derivatives:
     \begin{proof}
         
@@ -112,5 +112,19 @@ $$|x^\alpha| \leq |x|^{|\alpha|}$$
 where $x^\alpha = x_1^{\alpha_1} \dots x_n^{\alpha_n}$, $|x| = \sqrt{x_1^2 + \dots + x_n^2}$, $|\alpha| = \alpha_1 + \dots + \alpha_n$
 
 \hrule
+
+\begin{proof}
+    
+    We know that $ |x^\alpha| = |x_1^{\alpha_1} \dots x_n^{\alpha_n}| = \left| \prod_{i = 1} ^n x_i^{\alpha_i} \right|$
+    Which: $\left| \prod_{i = 1} ^n x_i^{\alpha_i} \right| \leq \left| \prod_{i = 1} ^n |x|^{\alpha_i} \right|$ since $x_i \leq |x|$.
+
+    Which if we write this out is $|x|^{\alpha_1} \cdot |x|^{\alpha_2} \cdot \dots |x|^{\alpha_n} = |x|^{\alpha_1 + \dots + \alpha_n} = |x|^{|\alpha|}$
+
+\end{proof}
+
+
+
+
+
 
 \end{document}
