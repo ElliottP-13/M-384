@@ -46,9 +46,9 @@ $$f(x,y) = \begin{cases}
         We have $\frac{xy(x^2-y^2)}{x^2 + y^2} = \frac{yx^3-xy^3}{x^2 + y^2}$
 
         We use the quotient rule to get: 
-        $\partial f / \partial x = \frac{(3yx^2 - y^3)(x^2 + y^2)  - (yx^3-xy^3)2x}{(x^2 + y^2)^2} = \frac{(3yx^2 - y^3)(x^2 + y^2) - 2yx^4-2x^2y^3}{(x^2 + y^2)^2}$
+        $\partial f / \partial x = \frac{(3yx^2 - y^3)(x^2 + y^2)  - (yx^3-xy^3)2x}{(x^2 + y^2)^2} = \frac{(3yx^2 - y^3)(x^2 + y^2) - 2yx^4+2x^2y^3}{(x^2 + y^2)^2}$
 
-        Similarly, we solve: $\partial f / \partial y = \frac{(x^3 - 3xy^2)(x^2+ y^2) - (yx^3-xy^3)2y}{(x^2 + y^2)^2} = \frac{(x^3 - 3xy^2)(x^2 + y^2) - 2y^2x^3-2xy^4}{(x^2 + y^2)^2}$
+        Similarly, we solve: $\partial f / \partial y = \frac{(x^3 - 3xy^2)(x^2+ y^2) - (yx^3-xy^3)2y}{(x^2 + y^2)^2} = \frac{(x^3 - 3xy^2)(x^2 + y^2) - 2y^2x^3+2xy^4}{(x^2 + y^2)^2}$
         
         Then at $x, y = 0$ we use the definition. 
         So for $y = 0$
@@ -57,7 +57,7 @@ $$f(x,y) = \begin{cases}
             &= \lim_{x \to 0} \frac{\frac{0 \cdot x^3-x \cdot 0^3}{x^2 + 0^2}}{x} \\
             &= \lim_{x \to 0} 0/x^2 \cdot 1/x \\
             &= \lim_{x \to 0} 0/x^3 \\
-            &=  \lim_{x \to 0} 0/1 = 0 \\
+            &=  \lim_{x \to 0} 0/3! = 0 \\
         \end{align*}
         
         Where the last step follows from applying L'hopitals rule 3 times.
@@ -68,7 +68,7 @@ $$f(x,y) = \begin{cases}
             &= \lim_{y \to 0} \frac{\frac{y \cdot 0^3- 0 \cdot y^3}{0^2 + y^2}}{y} \\
             &= \lim_{y \to 0} 0/y^2 \cdot 1/y \\
             &= \lim_{y \to 0} 0/y^3 \\
-            &=  \lim_{y \to 0} 0/1 = 0 \\
+            &=  \lim_{y \to 0} 0/3! = 0 \\
         \end{align*}
 
         Thus the partial derivatives exist everywhere.
@@ -86,7 +86,7 @@ $$f(x,y) = \begin{cases}
         \begin{align*}
             \frac{\partial ^2 f(0,0)}{\partial x \partial y} = \frac{\partial}{\partial x} \left( \frac{\partial f}{\partial y} \right) &= 
                 \lim_{x \to 0} \frac{\frac{\partial f(x,0)}{\partial y} - \frac{\partial f(0,0)}{\partial y}}{x - 0}\\
-            &= \lim_{x \to 0} \frac{\frac{(x^3 - 3x \cdot 0^2)(x^2 + 0^2) - 2 \cdot 0^2x^3-2x \cdot 0^4}{(x^2 + 0^2)^2} - 0}{x} \\
+            &= \lim_{x \to 0} \frac{\frac{(x^3 - 3x \cdot 0^2)(x^2 + 0^2) + 2 \cdot 0^2x^3 + 2x \cdot 0^4}{(x^2 + 0^2)^2} - 0}{x} \\
             &= \lim_{x \to 0} \frac{\frac{x^5}{x^4} - 0}{x} \\
             &= 1\\
         \end{align*}
@@ -94,7 +94,7 @@ $$f(x,y) = \begin{cases}
         \begin{align*}
             \frac{\partial ^2 f(0,0)}{\partial y \partial x} = \frac{\partial}{\partial y} \left( \frac{\partial f}{\partial x} \right) &= 
                 \lim_{y \to 0} \frac{\frac{\partial f(0,y)}{\partial x} - \frac{\partial f(0,0)}{\partial x}}{y - 0}\\
-            &= \lim_{y \to 0} \frac{\frac{(3y \cdot 0^2 - y^3)(0^2 + y^2) - 2y \cdot 0^4-2 \cdot 0^2y^3}{(0^2 + y^2)^2} - 0}{y}\\
+            &= \lim_{y \to 0} \frac{\frac{(3y \cdot 0^2 - y^3)(0^2 + y^2) + 2y \cdot 0^4 + 2 \cdot 0^2y^3}{(0^2 + y^2)^2} - 0}{y}\\
             &= \lim_{y \to 0} \frac{\frac{- y^5}{y^4} - 0}{y}\\
             &= -1
         \end{align*}
